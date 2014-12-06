@@ -106,5 +106,20 @@ namespace TreeGecko.WebMonitor.Library.Manager
 
         #endregion
 
+        #region Alert
+
+        public Alert GetAlert(Guid _alertGuid)
+        {
+            AlertDAO dao = new AlertDAO(MongoDB);
+            return dao.Get(_alertGuid);
+        }
+
+        public List<Alert> GetAlerts(Guid _siteGuid)
+        {
+            
+        }
+
+        #endregion
+
     }
 }

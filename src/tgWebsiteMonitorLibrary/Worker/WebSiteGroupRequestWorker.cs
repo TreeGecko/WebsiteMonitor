@@ -9,13 +9,13 @@ using TreeGecko.WebMonitor.Library.Objects;
 
 namespace TreeGecko.WebMonitor.Library.Worker
 {
-    public class RequestWorker : IWorker
+    public class WebSiteRequestWorker : IWorker
     {
         Thread m_Thread;
         private readonly WebSite m_Site;
         private readonly WebsiteMonitorManager m_Manager;
 
-        public RequestWorker(WebsiteMonitorManager _manager,
+        public WebSiteRequestWorker(WebsiteMonitorManager _manager,
             WebSite _site)
         {
             m_Site = _site;

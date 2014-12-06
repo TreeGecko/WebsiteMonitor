@@ -79,17 +79,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants\AlertTypes.cs" />
     <Compile Include="Constants\Results.cs" />
+    <Compile Include="DAOs\AlertDAO.cs" />
     <Compile Include="DAOs\WebSiteCheckDAO.cs" />
     <Compile Include="DAOs\WebSiteDAO.cs" />
     <Compile Include="DAOs\UserDAO.cs" />
+    <Compile Include="DAOs\WebSiteGroupDAO.cs" />
     <Compile Include="Manager\WebsiteMonitorManager.cs" />
     <Compile Include="Manager\WebsiteMonitorStructureManager.cs" />
+    <Compile Include="Objects\Alert.cs" />
     <Compile Include="Objects\WebSite.cs" />
     <Compile Include="Objects\WebSiteCheck.cs" />
     <Compile Include="Objects\User.cs" />
+    <Compile Include="Objects\WebSiteGroup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Worker\RequestWorker.cs" />
+    <Compile Include="Worker\WebSiteGroupRequestWorker.cs" />
+    <Compile Include="Worker\WebSiteRequestWorker.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

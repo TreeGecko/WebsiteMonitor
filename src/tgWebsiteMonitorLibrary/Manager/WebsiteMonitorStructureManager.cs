@@ -18,6 +18,13 @@ namespace TreeGecko.WebMonitor.Library.Manager
             UserDAO userDAO = new UserDAO(MongoDB);
             userDAO.BuildTable();
 
+            WebSiteGroupDAO webSiteGroupDAO = new WebSiteGroupDAO(MongoDB);
+            webSiteGroupDAO.BuildTable();
+
+            AlertDAO alertDAO = new AlertDAO(MongoDB);
+            alertDAO.BuildTable();
+            
+
         }
     }
 }

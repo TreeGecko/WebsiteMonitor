@@ -4,9 +4,10 @@ using TreeGecko.WebMonitor.Library.Objects;
 
 namespace TreeGecko.WebMonitor.Library.DAOs
 {
-    internal class WebSiteDAO : AbstractMongoDAO<WebSite>
+    internal class WebSiteGroupDAO
+        : AbstractMongoDAO<WebSiteGroup>
     {
-        public WebSiteDAO(MongoDatabase _mongoDB) :
+        public WebSiteGroupDAO(MongoDatabase _mongoDB) :
             base(_mongoDB)
         {
             HasParent = false;
@@ -14,7 +15,7 @@ namespace TreeGecko.WebMonitor.Library.DAOs
 
         public override string TableName
         {
-            get { return "Sites"; }
+            get { return "WebSiteGroups"; }
         }
     }
 }

@@ -13,6 +13,8 @@ namespace TreeGecko.WebMonitor.Library.DAOs
         public WebSiteCheckDAO(MongoDatabase _mongoDB) 
             : base(_mongoDB)
         {
+            //WebSite
+            HasParent = true;
         }
 
         public override string TableName

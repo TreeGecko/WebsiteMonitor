@@ -4,46 +4,43 @@ using TreeGecko.Library.Common.Objects;
 
 namespace TreeGecko.WebMonitor.Library.Objects
 {
-    public class WebSite : AbstractTGObject    
+    public class WebSiteGroup : AbstractTGObject
     {
         /// <summary>
-        /// Url to test
+        /// 
         /// </summary>
-        public string Url { get; set; }
+        public string Name { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Description { get; set; }
 
         /// <summary>
         /// Seconds to check web site.
-        /// Ignored if in a group.
         /// </summary>
         public int CheckEvery { get; set; }
 
         /// <summary>
         /// Next time to test the web site.
-        /// Ignored if in a group.
         /// </summary>
         public DateTime NextCheckTime { get; set; }
 
         /// <summary>
-        /// List of users to notify
-        /// Ignored if in group
-        /// </summary>
-        public List<Guid> UsersToNotify { get; set; } 
-
-        /// <summary>
         /// 
         /// </summary>
-        public Guid? WebSiteGroupGuid { get; set; }
+        public List<Guid> UsersToNotify { get; set; } 
 
         public override TGSerializedObject GetTGSerializedObject()
         {
             TGSerializedObject tgs = base.GetTGSerializedObject();
 
-            tgs.Add("Url", Url);
+            tgs.Add("Name", Name);
+            tgs.Add("Description", Description);
             tgs.Add("CheckEvery", CheckEvery);
             tgs.Add("NextCheckTime", NextCheckTime);
-            tgs.Add("WebSiteGroupGuid", WebSiteGroupGuid);
             tgs.Add("UsersToNotify", UsersToNotify);
-
+            
             return tgs;
         }
 
@@ -51,10 +48,10 @@ namespace TreeGecko.WebMonitor.Library.Objects
         {
             base.LoadFromTGSerializedObject(_tgs);
 
-            Url = _tgs.GetString("Url");
+            Name = _tgs.GetString("Name");
+            Description = _tgs.GetString("Description");
             CheckEvery = _tgs.GetInt32("CheckEvery");
             NextCheckTime = _tgs.GetDateTime("NextCheckTime");
-            WebSiteGroupGuid = _tgs.GetNullableGuid("WebSiteGroupGuid");
             UsersToNotify = _tgs.GetListOfGuids("UsersToNotify");
         }
     }

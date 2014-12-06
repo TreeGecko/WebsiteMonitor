@@ -4,12 +4,13 @@ using TreeGecko.WebMonitor.Library.Objects;
 
 namespace TreeGecko.WebMonitor.Library.DAOs
 {
-    public class UserDAO 
+    internal class UserDAO 
         : AbstractMongoDAO<User>
     {
         public UserDAO(MongoDatabase _mongoDB) :
             base(_mongoDB)
         {
+            HasParent = false;
         }
 
         public override string TableName
