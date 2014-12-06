@@ -3,3 +3,4 @@ src/tgWebsiteMonitorLibrary/obj/
 src/tgWebsiteMonitorTestRig/obj/
 src/tgWebsiteMonitorLibrary/bin/
 *.suo
+src/tgWebsiteMonitorTestRig/app.config
