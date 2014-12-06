@@ -1,0 +1,5 @@
+src/tgWebsiteMonitorTestRig/bin/
+src/tgWebsiteMonitorLibrary/obj/
+src/tgWebsiteMonitorTestRig/obj/
+src/tgWebsiteMonitorLibrary/bin/
+*.suo
