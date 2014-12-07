@@ -1,10 +1,11 @@
 ﻿using TreeGecko.Library.Common.Helpers;
+using TreeGecko.WebMonitor.Library.Manager;
 
 namespace TreeGecko.WebMonitor.TestRig
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             TraceFileHelper.SetupLogging();
 
@@ -16,10 +17,12 @@ namespace TreeGecko.WebMonitor.TestRig
                 switch (method)
                 {
                     case "builddb":
+                        BuildDB();
                         break;
                     case "":
                         break;
                     case "monitor":
+                        Monitor();
                         break;
                 }
 
@@ -27,5 +30,19 @@ namespace TreeGecko.WebMonitor.TestRig
 
             TraceFileHelper.TearDownLogging();
         }
+
+        private static void Monitor()
+        {
+            WebsiteMonitorManager manager = new WebsiteMonitorManager();
+            
+
+        }
+
+        private static void BuildDB()
+        {
+            WebsiteMonitorStructureManager wmsm = new WebsiteMonitorStructureManager();
+            wmsm.BuildDB();
+        }
+
     }
 }

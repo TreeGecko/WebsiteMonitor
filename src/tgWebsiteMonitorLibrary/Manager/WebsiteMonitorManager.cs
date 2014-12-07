@@ -9,7 +9,7 @@ namespace TreeGecko.WebMonitor.Library.Manager
     public class WebsiteMonitorManager : AbstractMongoManager
     {
         public WebsiteMonitorManager() 
-            : base("WM")
+            : base("WSM")
         {
 
         }
@@ -108,6 +108,12 @@ namespace TreeGecko.WebMonitor.Library.Manager
 
         #region Alert
 
+        public void Persist(Alert _alert)
+        {
+            AlertDAO dao = new AlertDAO(MongoDB);
+            dao.Persist(_alert);
+        }
+
         public Alert GetAlert(Guid _alertGuid)
         {
             AlertDAO dao = new AlertDAO(MongoDB);
@@ -116,7 +122,23 @@ namespace TreeGecko.WebMonitor.Library.Manager
 
         public List<Alert> GetAlerts(Guid _siteGuid)
         {
-            
+            return null;
+        }
+
+        #endregion
+
+        #region WebSiteGroup
+
+        public void Persist(WebSiteGroup _webSiteGroup)
+        {
+            WebSiteGroupDAO dao = new WebSiteGroupDAO(MongoDB);
+            dao.Persist(_webSiteGroup);
+        }
+
+        public WebSiteGroup GetWebSiteGroup(Guid _websiteGroupGuid)
+        {
+            WebSiteGroupDAO dao = new WebSiteGroupDAO(MongoDB);
+            return dao.Get(_websiteGroupGuid);
         }
 
         #endregion

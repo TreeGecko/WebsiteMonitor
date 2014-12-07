@@ -6,8 +6,12 @@ namespace TreeGecko.WebMonitor.Library.Manager
     public class WebsiteMonitorStructureManager
         : AbstractMongoManager
     {
-        public WebsiteMonitorStructureManager() 
-            : base("WM")
+        public WebsiteMonitorStructureManager()
+            : base("WSM")
+        {
+        }
+
+        public void BuildDB()
         {
             WebSiteCheckDAO siteCheckDAO = new WebSiteCheckDAO(MongoDB);
             siteCheckDAO.BuildTable();
@@ -23,8 +27,6 @@ namespace TreeGecko.WebMonitor.Library.Manager
 
             AlertDAO alertDAO = new AlertDAO(MongoDB);
             alertDAO.BuildTable();
-            
-
         }
     }
 }

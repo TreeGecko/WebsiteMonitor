@@ -14,7 +14,7 @@ namespace TreeGecko.WebMonitor.Library.DAOs
 
         public override string TableName
         {
-            get { return "Sites"; }
+            get { return "WebSites"; }
         }
     }
 }
